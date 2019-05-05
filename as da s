@@ -1,1 +1,104 @@
-as da d s da s d
+#Q1
+scp -i 43889573.pem twain.txt ubuntu@ec2-52-63-69-70.ap-southeast-2.compute.amazonaws.com:
+chmod u+x twain.txt
+sed 's/Huck/HucK/g' twain.txt
+
+#Q2
+def writeln(x=''):
+    """
+    Write x and an end-of-line mark to standard output.
+    """
+    if sys.hexversion < 0x03000000:
+        x = unicode(x)
+        x = x.encode('utf-8')
+    else:
+        x = str(x)
+    sys.stdout.write(x)
+    sys.stdout.write('\n')
+    sys.stdout.flush()
+
+#-----------------------------------------------------------------------
+
+def write(x=''):
+    """
+    Write x to standard output.
+    """
+    if (sys.hexversion < 0x03000000):
+        x = unicode(x)
+        x = x.encode('utf-8')
+    else:
+        x = str(x)
+    sys.stdout.write(x)
+sys.stdout.flush()
+write(’Hi, ’)
+write(sys.argv[1])
+writeln(’. How are you?’)
+
+#Q3
+import sys
+n=int(sys.argv[1])
+if(n%4==0):
+        if(n%100==0):
+                if(n%400==0):
+                        print(n, "is a leap year")
+                else:
+                        print(n, "is not a leap year")
+        else:
+                print(n,"is a leap year")
+else:
+        print(n,"is not a leap year")
+
+#Q4
+import random
+import sys
+#import random and sys 
+a=int(sys.argv[1])
+b=int(sys.argv[2])
+#Make first two command argument as the first two integer input and assign 
+#them to be a and b
+if b>a:
+        cond=True
+else:
+        cond=False
+#check the condition of b>a
+while not cond:
+        b=int(input('Please enter a greater value for the second number:'))
+        if b>a:
+                cond=True
+        else:
+                cond=False
+#Ask to input a greater value for the second number until the condition is met
+print(random.randint(a,b))
+#Print out the result
+
+#Q5
+from datetime import*
+import sys
+#load datetime module 
+m=int(sys.argv[1])
+d=int(sys.argv[2])
+#Make first two command argument as month and date  input and assign 
+#them to be m and d  
+datet=date(2016,m,d)
+date1=date(2016,3,20)
+date2=date(2016,6,20)
+#change input type to date
+if date1<datet<date2:
+        print("True")
+else:
+        print("False")
+
+#Q6
+import math
+#import module math
+P=int(input('The principal: '))
+r=float(input('The annual interest rate: '))
+t=int(input('The number of the years: '))
+#set up all the required input 
+print(P*math.exp(r*t))
+#print the result using the formula
+print(P*math.exp(r*t))
+
+
+
+
